@@ -1,6 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:talamiz_arina/core/routes/pages_keys.dart';
@@ -31,7 +32,15 @@ class OnBoardContent extends StatelessWidget {
               children: [
                 SizedBox(
                   height: MediaQuery.sizeOf(context).height * .5,
-                  child: Center(child: Image.asset(onboardingIcons[index])),
+                  child: Center(
+                    child: Image.asset(onboardingIcons[index])
+                        .animate(onPlay: (c) => c.repeat(reverse: true))
+                        .moveY(
+                            begin: 0,
+                            end: 10,
+                            duration: 2.seconds,
+                            curve: Curves.easeInOut),
+                  ),
                 ),
                 FadeIn(
                   delay: const Duration(milliseconds: 100),
@@ -54,7 +63,7 @@ class OnBoardContent extends StatelessWidget {
                       FadeIn(
                         delay: const Duration(milliseconds: 200),
                         duration: const Duration(milliseconds: 600),
-                        child:   Text(
+                        child: Text(
                           r'تحتاج شرح أكثر؟',
                           style: AppTextStyle.font16Medium,
                           textAlign: TextAlign.center,
@@ -74,33 +83,41 @@ class OnBoardContent extends StatelessWidget {
                 ),
                 const SizedBox(height: 50),
                 if (controller.currentPage == 2) ...[
-                  FadeIn(
-                    delay: const Duration(milliseconds: 700),
-                    duration: const Duration(milliseconds: 700),
-                    child: PrimaryButton(
-                      isMax: true,
-                      onPressed: () {
-                        context.push(PagesKeys.assignUserTypePage);
-                      },
-                      text: "ادخل الساحة",
-                      // backgroundColor: MyColors.secondaryOrangeDark,
-                    ),
-                  ),
+                  PrimaryButton(
+                    isMax: true,
+                    onPressed: () {
+                      context.push(PagesKeys.assignUserTypePage);
+                    },
+                    text: "ادخل الساحة",
+                    // backgroundColor: MyColors.secondaryOrangeDark,
+                  )
+                      .animate()
+                      .fadeIn(delay: 700.ms, duration: 700.ms)
+                      .slideY(
+                          begin: 0.2,
+                          end: 0,
+                          delay: 700.ms,
+                          duration: 600.ms,
+                          curve: Curves.easeOut),
                   const SizedBox(height: 16),
-                  FadeIn(
-                    delay: const Duration(milliseconds: 900),
-                    duration: const Duration(milliseconds: 700),
-                    child: PrimaryButton(
-                      backgroundColor: Colors.white,
-                      textColor: MyColors.purpleNormal,
-                      borderColor: MyColors.purpleNormal,
-                      isMax: true,
-                      onPressed: () {
-                        context.push(PagesKeys.registerPage);
-                      },
-                      text: "إنشاء حساب جديد",
-                    ),
-                  ),
+                  PrimaryButton(
+                    backgroundColor: Colors.white,
+                    textColor: MyColors.purpleNormal,
+                    borderColor: MyColors.purpleNormal,
+                    isMax: true,
+                    onPressed: () {
+                      context.push(PagesKeys.registerPage);
+                    },
+                    text: "إنشاء حساب جديد",
+                  )
+                      .animate()
+                      .fadeIn(delay: 900.ms, duration: 700.ms)
+                      .slideY(
+                          begin: 0.2,
+                          end: 0,
+                          delay: 900.ms,
+                          duration: 600.ms,
+                          curve: Curves.easeOut),
                   const SizedBox(height: 40),
                 ],
               ],

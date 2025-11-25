@@ -35,25 +35,47 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         builder: (context, state) {
           return ScreenWrapper(
             backGroundColor: Colors.white,
-            body: SafeArea(
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 4.0),
-                      child: CustomSteper(),
+            topSafeArea: false, // Disable topSafeArea to let background cover status bar
+            body: Stack(
+              children: [
+                // Subtle Background Gradient
+                Container(
+                  decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.white,
+                        Color(0xFFFDFBF7), // Very faint orange/warm white
+                        Color(0xFFF9F5FF), // Very faint purple/cool white
+                      ],
+                      stops: [0.0, 0.5, 1.0],
                     ),
-                    const SizedBox(height: 6),
-                    ChangeLangWidget(
-                      skipPress: () {
-                        context.push(PagesKeys.assignUserTypePage);
-                      },
-                    ),
-                    //----end of steper
-                    const OnBoardContent(),
-                  ],
+                  ),
                 ),
-              ),
+
+                // Main Content
+                SafeArea(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        const Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 4.0),
+                          child: CustomSteper(),
+                        ),
+                        const SizedBox(height: 6),
+                        ChangeLangWidget(
+                          skipPress: () {
+                            context.push(PagesKeys.assignUserTypePage);
+                          },
+                        ),
+                        //----end of steper
+                        const OnBoardContent(),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
           );
         },
