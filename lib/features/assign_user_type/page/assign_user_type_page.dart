@@ -8,11 +8,32 @@ class AssignUserTypePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ScreenWrapper(
+    return   ScreenWrapper(
       backGroundColor: Colors.white,
-      topSafeArea: true,
-      body: SafeArea(
-        child: CustomScrollView(slivers: [WelcomView(), ActionView()]),
+      topSafeArea: false, // Disable topSafeArea to let background cover status bar
+      body: Stack(
+        children: [
+          // Subtle Background Gradient
+          Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Colors.white,
+                  Color(0xFFFDFBF7), // Very faint orange/warm white
+                  Color(0xFFF9F5FF), // Very faint purple/cool white
+                ],
+                stops: [0.0, 0.5, 1.0],
+              ),
+            ),
+          ),
+          
+          // Main Content
+          const SafeArea(
+            child: CustomScrollView(slivers: [WelcomView(), ActionView()]),
+          ),
+        ],
       ),
     );
   }

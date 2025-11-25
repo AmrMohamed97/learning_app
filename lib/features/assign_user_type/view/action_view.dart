@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:go_router/go_router.dart';
 import 'package:talamiz_arina/core/routes/pages_keys.dart';
 import 'package:talamiz_arina/core/themes/colors/colors.dart';
@@ -43,7 +44,10 @@ class _ActionViewState extends State<ActionView> {
               ),
               const SizedBox(width: 16),
             ],
-          ),
+          )
+              .animate()
+              .fade(delay: 900.ms, duration: 600.ms)
+              .slideY(begin: 0.2, end: 0, delay: 900.ms, duration: 600.ms),
           const SizedBox(height: 24),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -62,7 +66,10 @@ class _ActionViewState extends State<ActionView> {
                 }
               },
             ),
-          ),
+          )
+              .animate()
+              .fade(delay: 1100.ms, duration: 600.ms)
+              .slideY(begin: 0.2, end: 0, delay: 1100.ms, duration: 600.ms),
           const SizedBox(height: 24),
         ],
       ),

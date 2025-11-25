@@ -36,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   void initState() {
-    Future.delayed(const Duration(milliseconds: 3415), () {
+    Future.delayed(const Duration(milliseconds: 3400), () {
       startLottie();
     });
     super.initState();
@@ -338,7 +338,7 @@ class _SplashScreenState extends State<SplashScreen>
                     )
                     // .then(delay: 100.ms)
                     .shimmer(
-                      duration: 2.6.seconds,
+                      duration: 2.5.seconds,
                       color: primaryPurple.withOpacity(0.15),
                       angle: 45,
                     )
