@@ -352,54 +352,6 @@ class _SplashScreenState extends State<SplashScreen>
                   ),
                 if (!isbook) const SizedBox(width: 240, height: 200),
                 const Spacer(),
-
-                // Premium Progress Indicator
-                // SizedBox(
-                //   width: 200,
-                //   child: Column(
-                //     children: [
-                //       // Modern styled progress bar
-                //       Container(
-                //             height: 4,
-                //             decoration: BoxDecoration(
-                //               borderRadius: BorderRadius.circular(10),
-                //               gradient: LinearGradient(
-                //                 colors: [
-                //                   primaryPurple.withOpacity(0.08),
-                //                   primaryPurple.withOpacity(0.04),
-                //                 ],
-                //               ),
-                //             ),
-                //             child: ClipRRect(
-                //               borderRadius: BorderRadius.circular(10),
-                //               child: LinearProgressIndicator(
-                //                 backgroundColor: Colors.transparent,
-                //                 valueColor: AlwaysStoppedAnimation<Color>(
-                //                   primaryPurple,
-                //                 ),
-                //                 minHeight: 4,
-                //               ),
-                //             ),
-                //           )
-                //           .animate()
-                //           .fadeIn(delay: 600.ms, duration: 600.ms)
-                //           .slideX(
-                //             begin: -1,
-                //             end: 0,
-                //             delay: 600.ms,
-                //             duration: 800.ms,
-                //             curve: Curves.easeOut,
-                //           )
-                //           .shimmer(
-                //             delay: 1200.ms,
-                //             duration: 2.5.seconds,
-                //             color: lightPurple.withOpacity(0.8),
-                //           ),
-
-                //      ],
-                //   ),
-                // ),
-                // const SizedBox(height: 20),
               ],
             ),
           ),
