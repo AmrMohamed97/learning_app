@@ -1,0 +1,35 @@
+abstract class PagesKeys {
+  static const onboardingScreen = '/onboardingScreen';
+  static const splashScreen = '/splashView';
+  static const assignUserTypePage = '/assignUserTypePage';
+  static const registerPage = '/registerPage';
+  static const loginPage = '/loginPage';
+  static const otpPage = '/otpPage';
+  static const homePage = '/homePage';
+  static const teacherProfilePage = '/teatureProfilePage';
+  static const termsConditionPage = '/termsConditionPage';
+  static const aboutAppPage = '/aboutAppPage';
+  static const profileAddressPage = '/profileAddressPage';
+  static const notificationPage = '/notificationPage';
+  static const editProfilePage = '/editProfilePage';
+  static const contactUsPage = '/contactUsPage';
+  static const editPasswordPage = '/editPasswordPage';
+  static const viewTeachersPage = '/viewTeachersPage';
+  static const filterTeacherPageKey = '/filterTeacherPage';
+  static const forgotPasswordPage = '/forgotPasswordPage';
+  static const newPasswordPage = '/newPasswordPage';
+  static const coursesPage = '/coursesPage';
+  static const filterCoursePageKey = '/filterCoursePage';
+  static const profilePage = '/profilePage';
+  static const walletPage = '/walletPage';
+  static const walletChargePage = '/walletChargePage';
+  static const mainBottomNavView = '/bottomNavView';
+  static const paymentResultPage = '/paymentResultPage';
+  static const editProfile = '/editProfile';
+  static const editAuthInfo = '/editAuthInfo';
+  static const chatsListPage = '/chatsListPage';
+  static const chatPage = '/chatPage';
+  static const coursePackagePage = '/coursePackagePage';
+  static const timeTablePage = '/timeTablePage';
+  static const filterTimetablePageKey = '/filterTimetablePageKey';
+}
