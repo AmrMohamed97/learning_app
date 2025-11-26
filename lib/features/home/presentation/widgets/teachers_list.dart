@@ -18,7 +18,8 @@ class _TeachersListState extends State<TeachersList> {
     title: 'معلم رياضيات و قدرات بخبرة 20 عام',
     experience: '20 عام',
     pricePerHalfHour: 50.0,
-    profileImageUrl: 'https://firebasestorage.googleapis.com/v0/b/zad-al-daia.firebasestorage.app/o/a5e70ce43db5770ad0b98944601e3f8bb9a83c1c.jpg?alt=media&token=ec23e7af-95d1-4f3a-b6c3-463532bbad0f',
+    profileImageUrl:
+        'https://firebasestorage.googleapis.com/v0/b/zad-al-daia.firebasestorage.app/o/a5e70ce43db5770ad0b98944601e3f8bb9a83c1c.jpg?alt=media&token=ec23e7af-95d1-4f3a-b6c3-463532bbad0f',
     isVerified: true,
     isFavorite: false,
     subjects: [
@@ -54,7 +55,7 @@ class _TeachersListState extends State<TeachersList> {
         ListView.builder(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
-          itemCount: 3,
+          itemCount: 2,
           itemBuilder: (context, index) {
             return TeacherWidget(teacher: teacher);
           },

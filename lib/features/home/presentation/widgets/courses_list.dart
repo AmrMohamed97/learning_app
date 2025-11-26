@@ -81,7 +81,7 @@ class _CoursesListState extends State<CoursesList> {
               (index) => Container(
                 margin: const EdgeInsetsDirectional.only(end: 16),
                 child: SizedBox(
-                  width: 350,
+                  width: MediaQuery.of(context).size.width - 100,
                   child: CourseWidget(course: course),
                 ),
               ),
