@@ -84,19 +84,24 @@ class _MyPhoneNumberFormFieldState extends State<MyPhoneNumberFormField> {
                 DropdownButtonHideUnderline(
                   child: DropdownButton<String>(
                     dropdownColor: Colors.white,
-                    icon: const Icon(
-                      Icons.keyboard_arrow_down_rounded,
-                      color: MyColors.darkBlueDarkHover,
-                      size: 18,
-                    ),
+                    icon: const SizedBox.shrink(),
                     value: _selectedCountryIsoCode,
                     selectedItemBuilder: (context) {
                       return countryToPhoneCode.entries.map((entry) {
-                        return Center(
-                          child: Text(
-                            countryCodeToEmoji(entry.key),
-                            style: AppTextStyle.font16Regular,
-                          ),
+                        return Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            const Icon(
+                              Icons.keyboard_arrow_down_rounded,
+                              color: MyColors.darkBlueDarkHover,
+                              size: 18,
+                            ),
+                            const SizedBox(width: 4),
+                            Text(
+                              countryCodeToEmoji(entry.key),
+                              style: AppTextStyle.font16Regular,
+                            ),
+                          ],
                         );
                       }).toList();
                     },
