@@ -25,37 +25,74 @@ class MainBottomNavView extends StatelessWidget {
           //   index: currentIndex,
           //   children: pages,
           // ),
-          bottomNavigationBar: BottomNavigationBar(
-            currentIndex: cubit.currentIndex,
-            onTap: (index) {
-              cubit.changePage(index);
-            },
-            selectedItemColor: Colors.blue,
-            unselectedItemColor: Colors.grey,
-            showUnselectedLabels: true,
-            items: const [
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home_outlined),
-                activeIcon: Icon(Icons.home),
-                label: "الرئيسية",
+          bottomNavigationBar: Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(20),
+                topRight: Radius.circular(20),
               ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.auto_stories),
-                label: "الدورات",
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.05),
+                  blurRadius: 10,
+                  offset: const Offset(0, -5),
+                ),
+              ],
+            ),
+            child: ClipRRect(
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(20),
+                topRight: Radius.circular(20),
               ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.message),
-                label: "الرسائئل",
+              child: BottomNavigationBar(
+                currentIndex: cubit.currentIndex,
+                onTap: (index) {
+                  cubit.changePage(index);
+                },
+                type: BottomNavigationBarType.fixed,
+                backgroundColor: Colors.white,
+                elevation: 0,
+                selectedItemColor: MyColors.purpleNormal,
+                unselectedItemColor: MyColors.greyLightActive,
+                selectedLabelStyle: const TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                ),
+                unselectedLabelStyle: const TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w500,
+                ),
+                showUnselectedLabels: true,
+                items: const [
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.home_outlined),
+                    activeIcon: Icon(Icons.home),
+                    label: "الرئيسية",
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.auto_stories_outlined),
+                    activeIcon: Icon(Icons.auto_stories),
+                    label: "الدورات",
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.message_outlined),
+                    activeIcon: Icon(Icons.message),
+                    label: "الرسائل",
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.calendar_month_outlined),
+                    activeIcon: Icon(Icons.calendar_month),
+                    label: "الجدول",
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.school_outlined),
+                    activeIcon: Icon(Icons.school),
+                    label: "المعلمين",
+                  ),
+                ],
               ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.calendar_month_outlined),
-                label: "الجدول",
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.school),
-                label: "المعلمين",
-              ),
-            ],
+            ),
           ),
         );
       },
