@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 // import 'package:motion_toast/resources/arrays.dart';
@@ -76,7 +77,13 @@ class RegistrationActions extends StatelessWidget {
                             // print(cubit.gender.value);
                             // print(cubit.image?.imgPath);
                             // cubit.register();
-                            context.push(PagesKeys.otpPage,extra: ('01902200099',PagesKeys.mainBottomNavView),);
+                            context.push(
+                              PagesKeys.otpPage,
+                              extra: (
+                                '01902200099',
+                                PagesKeys.mainBottomNavView,
+                              ),
+                            );
                           }
                         },
                       );
