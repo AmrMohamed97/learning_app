@@ -32,7 +32,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   @override
   void dispose() {
     _passwordController.dispose();
-    _formKey.currentState!.dispose();
+    _formKey.currentState?.dispose();
     _isButtonEnabled.dispose();
     super.dispose();
   }
