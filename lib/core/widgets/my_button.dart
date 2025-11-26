@@ -44,7 +44,7 @@ class MyButton extends StatelessWidget {
         ),
       ),
       child: isLoading == true
-          ? const Center(child: CupertinoActivityIndicator())
+          ? const Center(child: CupertinoActivityIndicator(color: Colors.white,))
           : child ?? Text(text, style: AppTextStyle.font16Medium),
     );
   }

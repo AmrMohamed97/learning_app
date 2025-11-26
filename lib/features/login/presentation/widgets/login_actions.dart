@@ -23,10 +23,10 @@ class LoginActions extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             ValueListenableBuilder(
-              valueListenable: cubit.isValid,
-              builder: (context, value, child) {
-                if (value) {
-                  return MyButton(
+                  valueListenable: cubit.isValid,
+                  builder: (context, value, child) {
+                    if (value) {
+                      return MyButton(
                         text: "ادخل الساحة",
                         onPressed: () {
                           if (context
@@ -41,14 +41,14 @@ class LoginActions extends StatelessWidget {
                             );
                           }
                         },
-                      )
-                      .animate(onPlay: (controller) => controller.repeat())
-                      .shimmer(duration: 2.seconds, delay: 2.seconds);
-                } else {
-                  return const MyButton(text: "ادخل الساحة");
-                }
-              },
-            )
+                      );
+                      // .animate(onPlay: (controller) => controller.repeat())
+                      // .shimmer(duration: 2.seconds, delay: 2.seconds);
+                    } else {
+                      return const MyButton(text: "ادخل الساحة");
+                    }
+                  },
+                )
                 .animate()
                 .fade(delay: 700.ms, duration: 600.ms)
                 .slideY(begin: 0.2, end: 0, delay: 700.ms, duration: 600.ms),
@@ -59,27 +59,27 @@ class LoginActions extends StatelessWidget {
                 .slideY(begin: 0.2, end: 0, delay: 800.ms, duration: 600.ms),
             const SizedBox(height: 24),
             RichText(
-              text: TextSpan(
-                text: "ليس لديك حساب؟",
-                style: AppTextStyle.font16Medium.copyWith(
-                  color: Colors.black,
-                  fontFamily: "sf-arabic-rounded",
-                ),
-                children: [
-                  TextSpan(
-                    recognizer: TapGestureRecognizer()
-                      ..onTap = () {
-                        context.push(PagesKeys.registerPage);
-                      },
-                    text: " افتح حساب جديد الان",
+                  text: TextSpan(
+                    text: "ليس لديك حساب؟",
                     style: AppTextStyle.font16Medium.copyWith(
-                      color: MyColors.purpleNormal,
-                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                      fontFamily: "sf-arabic-rounded",
                     ),
+                    children: [
+                      TextSpan(
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            context.push(PagesKeys.registerPage);
+                          },
+                        text: " افتح حساب جديد الان",
+                        style: AppTextStyle.font16Medium.copyWith(
+                          color: MyColors.purpleNormal,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-            )
+                )
                 .animate()
                 .fade(delay: 900.ms, duration: 600.ms)
                 .slideY(begin: 0.2, end: 0, delay: 900.ms, duration: 600.ms),
