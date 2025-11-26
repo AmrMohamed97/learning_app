@@ -85,7 +85,8 @@ class PageRoutes {
   static final GoRouter router = GoRouter(
     navigatorKey: _rootNavigatorKey,
     observers: [MyNavigatorObserver()],
-    initialLocation: PagesKeys.splashScreen,
+    initialLocation: PagesKeys.mainBottomNavView,
+    // initialLocation: PagesKeys.splashScreen,
     errorBuilder: (context, state) {
       PrintHelper(state.error.toString());
       return const ErorPage();
