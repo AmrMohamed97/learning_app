@@ -83,9 +83,9 @@ class LoginEmailFields extends StatelessWidget {
                   if (value!.isEmpty) {
                     return "هذا الحقل مطلوب";
                   }
-                  if (value.length < 8) {
-                    return "يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل، وتشمل حروفًا وأرقامًا";
-                  }
+                  // if (value.length < 8) {
+                  //   return "يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل، وتشمل حروفًا وأرقامًا";
+                  // }
                   return null;
                 },
               ),

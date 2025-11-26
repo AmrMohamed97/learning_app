@@ -47,12 +47,12 @@ class _MyPhoneNumberFormFieldState extends State<MyPhoneNumberFormField> {
             if (value == null || value.isEmpty) {
               return 'رقم الهاتف مطلوب';
             }
-            if (PhoneNumber.parse(
-                  countryToPhoneCode[_selectedCountryIsoCode]! + value,
-                ).isValid() ==
-                false) {
-              return 'رقم الهاتف غير صحيح';
-            }
+            // if (PhoneNumber.parse(
+            //       countryToPhoneCode[_selectedCountryIsoCode]! + value,
+            //     ).isValid() ==
+            //     false) {
+            //   return 'رقم الهاتف غير صحيح';
+            // }
 
             return null;
           },

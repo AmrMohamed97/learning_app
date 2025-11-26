@@ -105,9 +105,9 @@ class _MyFormTextFieldState extends State<MyTextFormField> {
                   if (value == null || value.isEmpty) {
                     return "الرجاء إدخال كلمة المرور";
                   }
-                  if (!Validator.validatePassword(value)) {
-                    return "يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل، وتشمل حروفًا وأرقامًا";
-                  }
+                  // if (!Validator.validatePassword(value)) {
+                  //   return "يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل، وتشمل حروفًا وأرقامًا";
+                  // }
                   return null;
                 }
               : null),
