@@ -17,53 +17,9 @@ class MainBottomNavView extends StatelessWidget {
       builder: (context, state) {
         final cubit = context.read<MainBottomNavCubit>();
         return Scaffold(
-          appBar: cubit.currentIndex != 1 && cubit.currentIndex != 4
-              ? AppBar(
-                  centerTitle: false,
-                  title: SvgPicture.asset(
-                    height: 35,
-                    Assets.assetsImagesSvgLogoHeading,
-                  ),
-                  actions: [
-                    Container(
-                      padding: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: MyColors.purpleLightActive,
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: SvgPicture.asset(
-                        Assets.assetsImagesSvgNotifications,
-                      ),
-                    ),
-                    const SizedBox(width: 8),
-                    Container(
-                      padding: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: MyColors.purpleLightActive,
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: SvgPicture.asset(Assets.assetsImagesSvgPerson),
-                    ),
-                  ],
-                  bottom: PreferredSize(
-                    preferredSize: const Size.fromHeight(40),
-                    child: Container(
-                      width: double.infinity,
-                      padding: const EdgeInsets.only(
-                        left: 16,
-                        right: 16,
-                        top: 8,
-                        bottom: 12,
-                      ),
-                      child: Text(
-                        textAlign: TextAlign.start,
-                        "${countryCodeToEmoji("EG")} الثالث ثانوي - علمي علوم",
-                        style: AppTextStyle.font16Medium,
-                      ),
-                    ),
-                  ),
-                )
-              : null,
+          appBar: cubit.currentIndex == 4 || cubit.currentIndex == 1
+              ? null
+              : const MainViewAppBar(),
           body: cubit.pages[cubit.currentIndex],
           //  IndexedStack(
           //   index: currentIndex,
@@ -105,4 +61,64 @@ class MainBottomNavView extends StatelessWidget {
       },
     );
   }
+}
+
+class MainViewAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const MainViewAppBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<MainBottomNavCubit, MainBottomNavState>(
+      builder: (context, state) {
+        final cubit = context.read<MainBottomNavCubit>();
+        return AppBar(
+          centerTitle: false,
+          title: SvgPicture.asset(
+            height: 35,
+            Assets.assetsImagesSvgLogoHeading,
+          ),
+          actions: [
+            Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                color: MyColors.purpleLightActive,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: SvgPicture.asset(Assets.assetsImagesSvgNotifications),
+            ),
+            const SizedBox(width: 8),
+            Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                color: MyColors.purpleLightActive,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: SvgPicture.asset(Assets.assetsImagesSvgPerson),
+            ),
+            // filter view
+          ],
+          bottom: PreferredSize(
+            preferredSize: const Size.fromHeight(40),
+            child: Container(
+              width: double.infinity,
+              padding: const EdgeInsets.only(
+                left: 16,
+                right: 16,
+                top: 8,
+                bottom: 12,
+              ),
+              child: Text(
+                textAlign: TextAlign.start,
+                "${countryCodeToEmoji("EG")} الثالث ثانوي - علمي علوم",
+                style: AppTextStyle.font16Medium,
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight + 45);
 }

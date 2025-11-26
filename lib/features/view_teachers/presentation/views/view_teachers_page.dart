@@ -68,83 +68,7 @@ class _ViewTeachersPageState extends State<ViewTeachersPage> {
   @override
   Widget build(BuildContext context) {
     return ScreenWrapper(
-      appBar: AppBar(
-        centerTitle: context.canPop(),
-        title: context.canPop()
-            ? const Text("المعلمين")
-            : SvgPicture.asset(height: 35, Assets.assetsImagesSvgLogoHeading),
-        actions: [
-          if (!context.canPop())
-            Row(
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    color: MyColors.purpleLightActive,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: SvgPicture.asset(Assets.assetsImagesSvgNotifications),
-                ),
-                const SizedBox(width: 8),
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    color: MyColors.purpleLightActive,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: SvgPicture.asset(Assets.assetsImagesSvgPerson),
-                ),
-                const SizedBox(width: 8),
-              ],
-            ),
-          GestureDetector(
-            onTap: () {
-              context
-                  .push(
-                    PagesKeys.filterTeacherPageKey,
-                    extra: _viewTeachersCubit.filter.value,
-                  )
-                  .then((value) {
-                    print(value);
-                    if (value is FilterTeacherModel) {
-                      if (value.isEmpty()) {
-                        _viewTeachersCubit.filter.value = null;
-                      } else {
-                        _viewTeachersCubit.filter.value = value.copyWith();
-                      }
-                    }
-                  });
-            },
-            child: Container(
-              padding: const EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                color: MyColors.purpleLightActive,
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: SvgPicture.asset(Assets.assetsImagesSvgFilter),
-            ),
-          ),
-        ],
-        bottom: context.canPop()
-            ? null
-            : PreferredSize(
-                preferredSize: const Size.fromHeight(40),
-                child: Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.only(
-                    left: 16,
-                    right: 16,
-                    top: 8,
-                    bottom: 12,
-                  ),
-                  child: Text(
-                    textAlign: TextAlign.start,
-                    "${countryCodeToEmoji("EG")} الثالث ثانوي - علمي علوم",
-                    style: AppTextStyle.font16Medium,
-                  ),
-                ),
-              ),
-      ),
+      appBar: ViewTeatureAppBar(viewTeachersCubit: _viewTeachersCubit),
       body: Column(
         children: [
           ValueListenableBuilder(
@@ -201,4 +125,97 @@ class _ViewTeachersPageState extends State<ViewTeachersPage> {
       ),
     );
   }
+}
+
+class ViewTeatureAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const ViewTeatureAppBar({
+    super.key,
+    required ViewTeachersCubit viewTeachersCubit,
+  }) : _viewTeachersCubit = viewTeachersCubit;
+
+  final ViewTeachersCubit _viewTeachersCubit;
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      centerTitle: context.canPop(),
+      title: context.canPop()
+          ? const Text("المعلمين")
+          : SvgPicture.asset(height: 35, Assets.assetsImagesSvgLogoHeading),
+      actions: [
+        if (!context.canPop())
+          Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: MyColors.purpleLightActive,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: SvgPicture.asset(Assets.assetsImagesSvgNotifications),
+              ),
+              const SizedBox(width: 8),
+              Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: MyColors.purpleLightActive,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: SvgPicture.asset(Assets.assetsImagesSvgPerson),
+              ),
+              const SizedBox(width: 8),
+            ],
+          ),
+        GestureDetector(
+          onTap: () {
+            context
+                .push(
+                  PagesKeys.filterTeacherPageKey,
+                  extra: _viewTeachersCubit.filter.value,
+                )
+                .then((value) {
+                  print(value);
+                  if (value is FilterTeacherModel) {
+                    if (value.isEmpty()) {
+                      _viewTeachersCubit.filter.value = null;
+                    } else {
+                      _viewTeachersCubit.filter.value = value.copyWith();
+                    }
+                  }
+                });
+          },
+          child: Container(
+            padding: const EdgeInsets.all(8),
+            decoration: BoxDecoration(
+              color: MyColors.purpleLightActive,
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: SvgPicture.asset(Assets.assetsImagesSvgFilter),
+          ),
+        ),
+      ],
+      bottom: context.canPop()
+          ? null
+          : PreferredSize(
+              preferredSize: const Size.fromHeight(40),
+              child: Container(
+                width: double.infinity,
+                padding: const EdgeInsets.only(
+                  left: 16,
+                  right: 16,
+                  top: 8,
+                  bottom: 12,
+                ),
+                child: Text(
+                  textAlign: TextAlign.start,
+                  "${countryCodeToEmoji("EG")} الثالث ثانوي - علمي علوم",
+                  style: AppTextStyle.font16Medium,
+                ),
+              ),
+            ),
+    );
+  }
+  
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight + 45);
 }

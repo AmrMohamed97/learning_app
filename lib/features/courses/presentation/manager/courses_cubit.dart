@@ -11,4 +11,5 @@ class CoursesCubit extends Cubit<CoursesState> {
 
   CoursesCubit(this._coursesRepo) : super(CoursesInitial());
   final ValueNotifier<FilterCourseModel?> filter = ValueNotifier<FilterCourseModel?>(null);
+
 }
