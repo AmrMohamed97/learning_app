@@ -48,7 +48,7 @@ class LoginPage extends StatelessWidget {
                           key: cubit.formKey,
                           child: const Column(
                             children: [
-                              SizedBox(height: 48),
+                              SizedBox(height: 30),
                               LogoHeading(
                                 text:
                                     "هلا والله بعودتك يا بطل"

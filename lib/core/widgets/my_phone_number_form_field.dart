@@ -80,51 +80,42 @@ class _MyPhoneNumberFormFieldState extends State<MyPhoneNumberFormField> {
             prefixIcon: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                const SizedBox(width: 18),
+                const SizedBox(width: 12),
                 DropdownButtonHideUnderline(
-                  child: Row(
-                    children: [
-                      const RotatedBox(
-                        quarterTurns: 3,
-                        child: Icon(
-                          size: 20,
-                          Icons.arrow_back_ios_outlined,
-                          color: MyColors.darkBlueDarkHover,
+                  child: DropdownButton<String>(
+                    dropdownColor: Colors.white,
+                    icon: const Icon(
+                      Icons.keyboard_arrow_down_rounded,
+                      color: MyColors.darkBlueDarkHover,
+                      size: 24,
+                    ),
+                    value: _selectedCountryIsoCode,
+                    items: countryToPhoneCode.entries.map((entry) {
+                      return DropdownMenuItem<String>(
+                        value: entry.key,
+                        child: Text(
+                          '${countryCodeToEmoji(entry.key)} ${entry.value}',
+                          style: AppTextStyle.font16Regular.copyWith(
+                            color: MyColors.darkBlueDarkHover,
+                          ),
                         ),
-                      ),
-                      const SizedBox(width: 8),
-                      DropdownButton<String>(
-                        dropdownColor: Colors.white,
-                        icon: const SizedBox.shrink(),
-                        value: _selectedCountryIsoCode,
-                        items: countryToPhoneCode.entries.map((entry) {
-                          return DropdownMenuItem<String>(
-                            value: entry.key,
-                            child: Text(
-                              '${countryCodeToEmoji(entry.key)} ${entry.value}',
-                              style: AppTextStyle.font16Regular.copyWith(
-                                color: MyColors.darkBlueDarkHover,
-                              ),
-                            ),
-                          );
-                        }).toList(),
-                        onChanged: (String? newValue) {
-                          setState(() {
-                            if (newValue == null) return;
-                            _selectedCountryIsoCode = newValue;
-                          });
-                        },
-                      ),
-                    ],
+                      );
+                    }).toList(),
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        if (newValue == null) return;
+                        _selectedCountryIsoCode = newValue;
+                      });
+                    },
                   ),
                 ),
-                const SizedBox(width: 10),
+                const SizedBox(width: 8),
                 Container(
-                  width: 1.3,
-                  height: 32,
+                  width: 1.5,
+                  height: 24,
                   color: MyColors.greyLightActive,
                 ),
-                const SizedBox(width: 10),
+                const SizedBox(width: 12),
               ],
             ),
             focusedBorder: _buildBorder(MyColors.purpleNormalActive),
