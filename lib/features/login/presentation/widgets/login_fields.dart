@@ -6,6 +6,8 @@ import 'package:talamiz_arina/core/utills/validator.dart';
 import 'package:talamiz_arina/core/widgets/my_phone_number_form_field.dart';
 import 'package:talamiz_arina/core/widgets/my_text_form_field.dart';
 import 'package:talamiz_arina/features/login/presentation/manager/login_cubit.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:talamiz_arina/core/themes/colors/colors.dart';
 import 'package:talamiz_arina/features/login/presentation/manager/login_state.dart';
 
 class LoginEmailFields extends StatelessWidget {
@@ -56,6 +58,27 @@ class LoginEmailFields extends StatelessWidget {
                 controller: cubit.passwordController,
                 hintText: "أدخل كلمة المرور",
                 obscureText: true,
+                prefixIcon: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const SizedBox(width: 12),
+                    SvgPicture.asset(
+                      Assets.assetsImagesSvgLock,
+                      colorFilter: const ColorFilter.mode(
+                        MyColors.darkBlueDarkHover,
+                        BlendMode.srcIn,
+                      ),
+                      width: 20,
+                    ),
+                    const SizedBox(width: 12),
+                    Container(
+                      width: 1.5,
+                      height: 24,
+                      color: MyColors.greyLightActive,
+                    ),
+                    const SizedBox(width: 12),
+                  ],
+                ),
                 validator: (value) {
                   if (value!.isEmpty) {
                     return "هذا الحقل مطلوب";
