@@ -48,9 +48,15 @@ class LoginActions extends StatelessWidget {
                   return const MyButton(text: "ادخل الساحة");
                 }
               },
-            ),
+            )
+                .animate()
+                .fade(delay: 700.ms, duration: 600.ms)
+                .slideY(begin: 0.2, end: 0, delay: 700.ms, duration: 600.ms),
             const SizedBox(height: 24),
-            const AuthWithAccountsRow(),
+            const AuthWithAccountsRow()
+                .animate()
+                .fade(delay: 800.ms, duration: 600.ms)
+                .slideY(begin: 0.2, end: 0, delay: 800.ms, duration: 600.ms),
             const SizedBox(height: 24),
             RichText(
               text: TextSpan(
@@ -73,7 +79,10 @@ class LoginActions extends StatelessWidget {
                   ),
                 ],
               ),
-            ),
+            )
+                .animate()
+                .fade(delay: 900.ms, duration: 600.ms)
+                .slideY(begin: 0.2, end: 0, delay: 900.ms, duration: 600.ms),
             const SizedBox(height: 40),
           ],
         );

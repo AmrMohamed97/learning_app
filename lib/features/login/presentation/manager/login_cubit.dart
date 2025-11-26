@@ -40,6 +40,12 @@ class LoginCubit extends Cubit<LoginState> {
     });
   }
 
+  void changeTab(int index) {
+    currentTabIndex = index;
+    validate();
+    emit(LoginTabChanged());
+  }
+
   @override
   Future<void> close() {
     emailController.dispose();

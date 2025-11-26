@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:go_router/go_router.dart';
 import 'package:talamiz_arina/core/routes/pages_keys.dart';
 import 'package:talamiz_arina/core/themes/colors/colors.dart';
@@ -20,7 +21,10 @@ class PasswordActions extends StatelessWidget {
           child: Text("هل نسيت كلمة المرور؟", style: AppTextStyle.font16Medium),
         ),
       ],
-    );
+    )
+        .animate()
+        .fade(delay: 600.ms, duration: 600.ms)
+        .slideY(begin: 0.2, end: 0, delay: 600.ms, duration: 600.ms);
   }
 }
 

@@ -14,3 +14,5 @@ class LoginSuccess extends LoginState {
 }
 
 class LoginLoading extends LoginState {}
+
+class LoginTabChanged extends LoginState {}
