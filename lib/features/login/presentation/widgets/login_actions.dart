@@ -42,8 +42,6 @@ class LoginActions extends StatelessWidget {
                           }
                         },
                       );
-                      // .animate(onPlay: (controller) => controller.repeat())
-                      // .shimmer(duration: 2.seconds, delay: 2.seconds);
                     } else {
                       return const MyButton(text: "ادخل الساحة");
                     }
