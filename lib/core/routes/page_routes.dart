@@ -29,6 +29,7 @@ import 'package:talamiz_arina/features/login/presentation/views/new_password_pag
 import 'package:talamiz_arina/features/main_bottom_nav/manager/main_bottom_nav_cubit.dart';
 import 'package:talamiz_arina/features/main_bottom_nav/view/main_bottom_nav_view.dart';
 import 'package:talamiz_arina/features/onboarding/presentation/pages/onboarding.dart';
+import 'package:talamiz_arina/features/otp/presentation/manager/otp_cubit.dart';
 import 'package:talamiz_arina/features/otp/presentation/page/otp_page.dart';
 import 'package:talamiz_arina/features/payment/data/models/payment_result_data.dart';
 import 'package:talamiz_arina/features/payment/presentation/views/payment_result_page.dart';
@@ -163,7 +164,7 @@ class PageRoutes {
             context: context,
             state: state,
             child: BlocProvider(
-              create: (context) => getIt<LoginCubit>(),
+              create: (context) => getIt<OtpCubit>(),
               child: OtpPage(nextPage: args.$1, phoneNumber: args.$2),
             ),
           );

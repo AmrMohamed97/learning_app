@@ -55,6 +55,8 @@ import 'package:talamiz_arina/features/login/presentation/manager/login_cubit.da
     as _i499;
 import 'package:talamiz_arina/features/main_bottom_nav/manager/main_bottom_nav_cubit.dart'
     as _i312;
+import 'package:talamiz_arina/features/otp/presentation/manager/otp_cubit.dart'
+    as _i38;
 import 'package:talamiz_arina/features/payment/data/repo/payment_repo.dart'
     as _i823;
 import 'package:talamiz_arina/features/payment/data/repo/payment_repo_imp.dart'
@@ -110,6 +112,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i174.CoursePackageCubit>(() => _i174.CoursePackageCubit());
     gh.factory<_i466.HomeCubit>(() => _i466.HomeCubit());
     gh.factory<_i312.MainBottomNavCubit>(() => _i312.MainBottomNavCubit());
+    gh.factory<_i38.OtpCubit>(() => _i38.OtpCubit());
     gh.factory<_i266.TeacherCubit>(() => _i266.TeacherCubit());
     gh.factory<_i604.ViewTeachersCubit>(() => _i604.ViewTeachersCubit());
     gh.lazySingleton<_i558.FlutterSecureStorage>(

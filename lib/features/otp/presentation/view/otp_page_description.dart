@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:talamiz_arina/core/routes/pages_keys.dart';
 import 'package:talamiz_arina/core/themes/colors/colors.dart';
 import 'package:talamiz_arina/core/themes/styles/app_text_style.dart';
 
@@ -41,7 +42,7 @@ class OtpPageDescription extends StatelessWidget {
                 ),
                 recognizer: TapGestureRecognizer()
                   ..onTap = () {
-                    context.pop();
+                    context.push(PagesKeys.loginPage);
                   },
               ),
             ],
