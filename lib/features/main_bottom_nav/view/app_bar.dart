@@ -19,9 +19,9 @@ class MainViewAppBar extends StatelessWidget implements PreferredSizeWidget {
         final cubit = context.read<MainBottomNavCubit>();
         return AppBar(
           centerTitle: false,
-          title: SvgPicture.asset(
+          title: Image.asset(
             height: 35,
-            Assets.assetsImagesSvgLogoHeading,
+            Assets.assetsImagesPngTalamizSplash,
           ),
           actions: [
             Container(

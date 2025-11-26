@@ -17,7 +17,7 @@ class WelcomView extends StatelessWidget {
           const SizedBox(height: 50),
           FractionallySizedBox(
             widthFactor: .7,
-            child: SvgPicture.asset(Assets.assetsImagesSvgLogoHeading),
+            child: Image.asset(Assets.assetsImagesPngTalamizSplash),
           )
               .animate()
               .fade(duration: 600.ms)

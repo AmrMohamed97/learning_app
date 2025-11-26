@@ -25,7 +25,7 @@ class HomeAppBarWithFilter extends StatelessWidget
           centerTitle: context.canPop(),
           title: context.canPop()
               ? const Text("الدورات")
-              : SvgPicture.asset(height: 35, Assets.assetsImagesSvgLogoHeading),
+              : Image.asset(height: 35, Assets.assetsImagesPngTalamizSplash),
           actions: [
             if (!context.canPop())
               Row(

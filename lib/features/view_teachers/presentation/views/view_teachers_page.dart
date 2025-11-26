@@ -141,7 +141,7 @@ class ViewTeatureAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: context.canPop(),
       title: context.canPop()
           ? const Text("المعلمين")
-          : SvgPicture.asset(height: 35, Assets.assetsImagesSvgLogoHeading),
+          : Image.asset(height: 35, Assets.assetsImagesPngTalamizSplash),
       actions: [
         if (!context.canPop())
           Row(

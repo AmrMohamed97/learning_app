@@ -14,7 +14,7 @@ class LogoHeading extends StatelessWidget {
       children: [
         FractionallySizedBox(
           widthFactor: .7,
-          child: SvgPicture.asset(Assets.assetsImagesSvgLogoHeading),
+          child: Image.asset(Assets.assetsImagesPngTalamizSplash),
         )
             .animate()
             .fade(duration: 600.ms)

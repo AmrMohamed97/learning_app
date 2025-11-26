@@ -201,12 +201,7 @@ class Assets {
   /// Assets for assetsImagesSvgLock
   /// assets/images/svg/lock.svg
   static const String assetsImagesSvgLock = "assets/images/svg/lock.svg";
-
-  /// Assets for assetsImagesSvgLogoHeading
-  /// assets/images/svg/logo_heading.svg
-  static const String assetsImagesSvgLogoHeading = "assets/images/svg/logo_heading.svg";
-
-  /// Assets for assetsImagesSvgLogout
+   /// Assets for assetsImagesSvgLogout
   /// assets/images/svg/logout.svg
   static const String assetsImagesSvgLogout = "assets/images/svg/logout.svg";
 

@@ -66,8 +66,8 @@ class OtpPage extends StatelessWidget {
                             const SizedBox(height: 60),
                             FractionallySizedBox(
                                   widthFactor: .6,
-                                  child: SvgPicture.asset(
-                                    Assets.assetsImagesSvgLogoHeading,
+                                  child: Image.asset(
+                                    Assets.assetsImagesPngTalamizSplash,
                                   ),
                                 )
                                 .animate()
