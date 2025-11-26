@@ -8,6 +8,7 @@ import 'package:talamiz_arina/core/themes/styles/app_text_style.dart';
 import 'package:talamiz_arina/features/main_bottom_nav/manager/main_bottom_nav_cubit.dart';
 import 'package:talamiz_arina/features/main_bottom_nav/manager/main_bottom_nav_state.dart';
 
+
 class MainBottomNavView extends StatelessWidget {
   const MainBottomNavView({super.key});
 
