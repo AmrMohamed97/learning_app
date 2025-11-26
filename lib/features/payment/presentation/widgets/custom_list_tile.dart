@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:talamiz_arina/core/themes/colors/colors.dart';
 
-class CustomListTile<T> extends StatelessWidget {
+class CustomListTile extends StatelessWidget {
   final Widget title;
-  final T value;
+  final String value;
   final bool isSelected;
   final VoidCallback? onTap;
 
@@ -39,10 +39,12 @@ class CustomListTile<T> extends StatelessWidget {
             child: Row(
               mainAxisSize: .min,
               children: [
-                Expanded(child: title),
+                Expanded(
+                  child: title,
+                ),
                 Transform.scale(
                   scale: 1.2,
-                  child: Radio<T>(
+                  child: Radio(
                     value: value,
                     materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                   ),

@@ -21,7 +21,7 @@ class AuthWithAccountsRow extends StatelessWidget {
           children: [
             Expanded(child: Container(color: MyColors.greyDark, height: 1.5)),
             const SizedBox(width: 6),
-              Text("او عن طريق", style: AppTextStyle.font14Regular),
+            Text("او عن طريق", style: AppTextStyle.font14Regular),
             const SizedBox(width: 6),
             Expanded(child: Container(color: MyColors.greyDark, height: 1.5)),
           ],

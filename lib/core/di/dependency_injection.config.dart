@@ -69,12 +69,10 @@ import 'package:talamiz_arina/features/profile/data/repo/profile_repo_imp.dart'
     as _i15;
 import 'package:talamiz_arina/features/profile/presentation/manager/profile_cubit.dart'
     as _i759;
-import 'package:talamiz_arina/features/registration/data/repo/registration_repo.dart'
-    as _i755;
-import 'package:talamiz_arina/features/registration/data/repo/registration_repo_imp.dart'
-    as _i64;
 import 'package:talamiz_arina/features/registration/presentation/manager/registration_cubit.dart'
     as _i289;
+import 'package:talamiz_arina/features/registration/presentation/manager/stage_cubit/stage_cubit.dart'
+    as _i942;
 import 'package:talamiz_arina/features/teacher_profile/presentation/manager/teacher_cubit.dart'
     as _i266;
 import 'package:talamiz_arina/features/timetable/data/repo/timetable_repo.dart'
@@ -113,6 +111,8 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i466.HomeCubit>(() => _i466.HomeCubit());
     gh.factory<_i312.MainBottomNavCubit>(() => _i312.MainBottomNavCubit());
     gh.factory<_i38.OtpCubit>(() => _i38.OtpCubit());
+    gh.factory<_i289.RegistrationCubit>(() => _i289.RegistrationCubit());
+    gh.factory<_i942.StageCubit>(() => _i942.StageCubit());
     gh.factory<_i266.TeacherCubit>(() => _i266.TeacherCubit());
     gh.factory<_i604.ViewTeachersCubit>(() => _i604.ViewTeachersCubit());
     gh.lazySingleton<_i558.FlutterSecureStorage>(
@@ -130,10 +130,6 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i358.CoursesRepo>(() => _i164.CoursesRepoImp());
     gh.factory<_i129.EditAuthInfoRepo>(() => _i915.EditAuthInfoRepoImp());
     gh.factory<_i1055.LoginRepo>(() => _i298.LoginRepoImp());
-    gh.factory<_i755.RegistrationRepo>(() => _i64.RegistrationRepoImp());
-    gh.factory<_i289.RegistrationCubit>(
-      () => _i289.RegistrationCubit(gh<_i755.RegistrationRepo>()),
-    );
     gh.factory<_i609.EditProfileCubit>(
       () => _i609.EditProfileCubit(gh<_i561.WalletRepo>()),
     );

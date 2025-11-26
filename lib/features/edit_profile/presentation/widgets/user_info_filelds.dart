@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:talamiz_arina/core/themes/styles/app_text_style.dart';
 import 'package:talamiz_arina/core/widgets/my_text_form_field.dart';
 import 'package:talamiz_arina/features/edit_profile/presentation/manager/edit_profile_cubit.dart';
-import 'package:talamiz_arina/features/registration/presentation/widgets/curriculum_grade_widget.dart';
-import 'package:talamiz_arina/features/registration/presentation/widgets/gender_radio_group.dart';
+import 'package:talamiz_arina/features/edit_profile/presentation/widgets/curriculum_grade_widget.dart';
+import 'package:talamiz_arina/features/edit_profile/presentation/widgets/gender_radio_group.dart';
 
 class UserInfoFilelds extends StatelessWidget {
   const UserInfoFilelds({super.key});

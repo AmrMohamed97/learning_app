@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:talamiz_arina/core/helper/assets_helper.dart';
 import 'package:talamiz_arina/features/payment/data/models/payment_method.dart';
-import 'package:talamiz_arina/features/registration/presentation/widgets/custom_list_tile.dart';
+import 'package:talamiz_arina/features/payment/presentation/widgets/custom_list_tile.dart';
 
 class SelectPaymentMethod extends StatefulWidget {
   final Function(PaymentMethod) onPaymentSelected;

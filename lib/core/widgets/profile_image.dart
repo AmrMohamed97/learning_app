@@ -33,7 +33,7 @@ class ProfileImage extends StatelessWidget {
               showModalBottomSheet(
                 context: context,
                 builder: (context) {
-                  return ImagePickerBottomSheet(image: img);
+                  return const ImagePickerBottomSheet();
                 },
               );
             }

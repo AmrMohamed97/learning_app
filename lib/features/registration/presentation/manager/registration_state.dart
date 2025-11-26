@@ -1,15 +1,20 @@
+// import 'package:talamiz_arina/core/models/auth_response/auth_response.dart';
+
 abstract class RegistrationState {}
 
 class RegistrationInitial extends RegistrationState {}
 
-class RegistrationFailure extends RegistrationState {
-  final String message;
+class AssignImageState extends RegistrationState {}
 
-  RegistrationFailure({required this.message});
-}
+// class RegistrationFailure extends RegistrationState {
+//   final String message;
 
-class RegistrationSuccess extends RegistrationState {
-  RegistrationSuccess();
-}
+//   RegistrationFailure({required this.message});
+// }
 
-class RegistrationLoading extends RegistrationState {}
+// class RegistrationSuccess extends RegistrationState {
+//   final AuthResponse response;
+//   RegistrationSuccess(this.response);
+// }
+
+// class RegistrationLoading extends RegistrationState {}
