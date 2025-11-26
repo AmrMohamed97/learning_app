@@ -7,8 +7,6 @@ import 'package:talamiz_arina/core/themes/styles/app_text_style.dart';
 import 'package:talamiz_arina/core/widgets/custom_drop_down.dart';
 import 'package:talamiz_arina/core/widgets/custom_error_widget.dart';
 // import 'package:talamiz_arina/core/widgets/custom_error_widget.dart';
-import 'package:talamiz_arina/features/registration/data/models/curreculum_out_model/curriculum_item.dart';
-import 'package:talamiz_arina/features/registration/data/models/stages_out_model/stage_item.dart';
 import 'package:talamiz_arina/features/registration/presentation/manager/registration_cubit.dart';
 import 'package:talamiz_arina/features/registration/presentation/manager/stage_cubit/stage_cubit.dart';
 import 'package:talamiz_arina/features/registration/presentation/manager/stage_cubit/stage_state.dart';

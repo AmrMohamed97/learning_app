@@ -19,24 +19,24 @@ class RegistrationActions extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<RegistrationCubit, RegistrationState>(
       listener: (context, state) {
-      //   if (state is RegistrationSuccess) {
-      //     UiHelper.showSnakBar(
-      //       message: 'تم التسجيل بنجاح',
-      //       context: context,
-      //       type: MotionToastType.success,
-      //     );
-      //     context.go(
-      //       PagesKeys.otpPage,
-      //       extra: (PagesKeys.mainBottomNavView, state.response.data!.user!.phone),
-      //     );
-      //   }
-      //   if (state is RegistrationFailure) {
-      //     UiHelper.showSnakBar(
-      //       message: state.message,
-      //       context: context,
-      //       type: MotionToastType.error,
-      //     );
-      //   }
+        //   if (state is RegistrationSuccess) {
+        //     UiHelper.showSnakBar(
+        //       message: 'تم التسجيل بنجاح',
+        //       context: context,
+        //       type: MotionToastType.success,
+        //     );
+        //     context.go(
+        //       PagesKeys.otpPage,
+        //       extra: (PagesKeys.mainBottomNavView, state.response.data!.user!.phone),
+        //     );
+        //   }
+        //   if (state is RegistrationFailure) {
+        //     UiHelper.showSnakBar(
+        //       message: state.message,
+        //       context: context,
+        //       type: MotionToastType.error,
+        //     );
+        //   }
       },
       builder: (context, state) {
         final cubit = context.read<RegistrationCubit>();
@@ -76,6 +76,7 @@ class RegistrationActions extends StatelessWidget {
                             // print(cubit.gender.value);
                             // print(cubit.image?.imgPath);
                             // cubit.register();
+                            context.push(PagesKeys.otpPage,extra: ('01902200099',PagesKeys.mainBottomNavView),);
                           }
                         },
                       );
