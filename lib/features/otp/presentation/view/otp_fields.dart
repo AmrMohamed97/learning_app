@@ -30,21 +30,21 @@ PinTheme defaultPinTheme(BuildContext context) {
 
   return PinTheme(
     width: baseWidth / 6,
-    height: 50,
+    height: 56,
     textStyle: AppTextStyle.font16Regular.copyWith(
-      fontSize: 20,
-      color: Colors.black87,
-      fontWeight: FontWeight.w600,
+      fontSize: 22,
+      color: MyColors.darkBlueDarkHover,
+      fontWeight: FontWeight.bold,
     ),
     decoration: BoxDecoration(
       color: Colors.white,
-      borderRadius: BorderRadius.circular(12),
-      border: Border.all(color: Colors.grey.shade300, width: 1.2),
+      borderRadius: BorderRadius.circular(16),
+      border: Border.all(color: MyColors.greyLightHover, width: 1.5),
       boxShadow: [
         BoxShadow(
-          color: Colors.black.withValues(alpha: 0.05),
-          blurRadius: 4,
-          offset: const Offset(0, 2),
+          color: MyColors.greyNormal.withValues(alpha: 0.1),
+          blurRadius: 8,
+          offset: const Offset(0, 4),
         ),
       ],
     ),
@@ -59,9 +59,9 @@ PinTheme focusedPinTheme(BuildContext context) {
       border: Border.all(color: primaryColor, width: 2),
       boxShadow: [
         BoxShadow(
-          color: primaryColor.withValues(alpha: 0.2),
-          blurRadius: 6,
-          offset: const Offset(0, 3),
+          color: primaryColor.withValues(alpha: 0.25),
+          blurRadius: 12,
+          offset: const Offset(0, 4),
         ),
       ],
     ),
@@ -73,7 +73,7 @@ PinTheme submittedPinTheme(BuildContext context) {
 
   return defaultPinTheme(context).copyWith(
     decoration: defaultPinTheme(context).decoration!.copyWith(
-      color: primaryColor.withValues(alpha: 0.05),
+      color: primaryColor.withValues(alpha: 0.08),
       border: Border.all(color: primaryColor),
     ),
   );

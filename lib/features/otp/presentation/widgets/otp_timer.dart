@@ -1,5 +1,8 @@
 import 'dart:async';
+import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:talamiz_arina/core/themes/colors/colors.dart';
+import 'package:talamiz_arina/core/themes/styles/app_text_style.dart';
 
 class OtpTimer extends StatefulWidget {
   const OtpTimer({
@@ -55,14 +58,25 @@ class _OtpTimerState extends State<OtpTimer> {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      'الوقت المتبقي ${_formatTime(_remainingSeconds)}',
-      style: widget.textStyle ??
-          const TextStyle(
-            fontSize: 16,
-            color: Colors.black,
-            fontWeight: FontWeight.w500,
-          ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Icon(
+          Icons.timer_outlined,
+          size: 18,
+          color: MyColors.greyNormalHover,
+        ),
+        const SizedBox(width: 6),
+        Text(
+          _formatTime(_remainingSeconds),
+          style:
+              widget.textStyle ??
+              AppTextStyle.font16Medium.copyWith(
+                color: MyColors.greyNormalHover,
+                fontFeatures: [const FontFeature.tabularFigures()],
+              ),
+        ),
+      ],
     );
   }
 }

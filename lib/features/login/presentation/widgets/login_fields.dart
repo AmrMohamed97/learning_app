@@ -43,9 +43,9 @@ class LoginEmailFields extends StatelessWidget {
                           if (value!.isEmpty) {
                             return "هذا الحقل مطلوب";
                           }
-                          if (!Validator.validateEmail(value)) {
-                            return "تأكد من كتابة البريد الإلكتروني بشكل صحيح.";
-                          }
+                          // if (!Validator.validateEmail(value)) {
+                          //   return "تأكد من كتابة البريد الإلكتروني بشكل صحيح.";
+                          // }
                           return null;
                         },
                       ),
