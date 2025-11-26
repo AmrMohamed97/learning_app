@@ -77,56 +77,56 @@ class _MyPhoneNumberFormFieldState extends State<MyPhoneNumberFormField> {
               vertical: 16,
               horizontal: 10,
             ),
-            prefixIcon: Container(
-              margin: const EdgeInsetsDirectional.only(start: 12, end: 8, top: 8, bottom: 8),
-              padding: const EdgeInsets.symmetric(horizontal: 4),
-              decoration: BoxDecoration(
-                color: MyColors.darkBlueNormal,
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  DropdownButtonHideUnderline(
-                    child: DropdownButton<String>(
-                      dropdownColor: Colors.white,
-                      icon: const Icon(
-                        Icons.keyboard_arrow_down_rounded,
-                        color: MyColors.darkBlueDarkHover,
-                        size: 18,
-                      ),
-                      value: _selectedCountryIsoCode,
-                      selectedItemBuilder: (context) {
-                        return countryToPhoneCode.entries.map((entry) {
-                          return Center(
-                            child: Text(
-                              countryCodeToEmoji(entry.key),
-                              style: AppTextStyle.font16Regular,
-                            ),
-                          );
-                        }).toList();
-                      },
-                      items: countryToPhoneCode.entries.map((entry) {
-                        return DropdownMenuItem<String>(
-                          value: entry.key,
+            prefixIcon: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const SizedBox(width: 8),
+                DropdownButtonHideUnderline(
+                  child: DropdownButton<String>(
+                    dropdownColor: Colors.white,
+                    icon: const Icon(
+                      Icons.keyboard_arrow_down_rounded,
+                      color: MyColors.darkBlueDarkHover,
+                      size: 18,
+                    ),
+                    value: _selectedCountryIsoCode,
+                    selectedItemBuilder: (context) {
+                      return countryToPhoneCode.entries.map((entry) {
+                        return Center(
                           child: Text(
-                            '${countryCodeToEmoji(entry.key)} ${entry.value}',
-                            style: AppTextStyle.font16Regular.copyWith(
-                              color: MyColors.darkBlueDarkHover,
-                            ),
+                            countryCodeToEmoji(entry.key),
+                            style: AppTextStyle.font16Regular,
                           ),
                         );
-                      }).toList(),
-                      onChanged: (String? newValue) {
-                        setState(() {
-                          if (newValue == null) return;
-                          _selectedCountryIsoCode = newValue;
-                        });
-                      },
-                    ),
+                      }).toList();
+                    },
+                    items: countryToPhoneCode.entries.map((entry) {
+                      return DropdownMenuItem<String>(
+                        value: entry.key,
+                        child: Text(
+                          '${countryCodeToEmoji(entry.key)} ${entry.value}',
+                          style: AppTextStyle.font16Regular.copyWith(
+                            color: MyColors.darkBlueDarkHover,
+                          ),
+                        ),
+                      );
+                    }).toList(),
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        if (newValue == null) return;
+                        _selectedCountryIsoCode = newValue;
+                      });
+                    },
                   ),
-                ],
-              ),
+                ),
+                const SizedBox(width: 4),
+                Container(
+                  width: 1.5,
+                  height: 24,
+                  color: MyColors.greyLightActive,
+                ),
+                const SizedBox(width: 8),
+              ],
             ),
             focusedBorder: _buildBorder(MyColors.purpleNormalActive),
             enabledBorder: _buildBorder(MyColors.greyLightHover),
