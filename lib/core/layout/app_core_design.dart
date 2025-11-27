@@ -25,7 +25,7 @@ class ApplicationDesign extends StatelessWidget {
             // title: kAppName,
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
-            locale: const Locale('ar'),
+            locale: const Locale('en'),
             builder: (context, child) {
               Intl.defaultLocale = Localizations.localeOf(context).toString();
               return child!;

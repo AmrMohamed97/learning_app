@@ -32,4 +32,5 @@ abstract class PagesKeys {
   static const coursePackagePage = '/coursePackagePage';
   static const timeTablePage = '/timeTablePage';
   static const filterTimetablePageKey = '/filterTimetablePageKey';
+  static const assignReserveDateTimePage = '/assignReserveDateTime';
 }
