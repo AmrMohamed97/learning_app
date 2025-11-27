@@ -97,7 +97,12 @@ class CourseInfoWidget extends StatelessWidget {
           Row(
             children: [
               Expanded(
-                child: MyButton(text: "احجز الآن", onPressed: () {}),
+                child: MyButton(
+                  text: "احجز الآن",
+                  onPressed: () {
+                    context.push(PagesKeys.assignReserveDateTimePage);
+                  },
+                ),
               ),
               const SizedBox(width: 8),
               Expanded(

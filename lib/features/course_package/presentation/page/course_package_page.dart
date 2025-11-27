@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:talamiz_arina/core/routes/pages_keys.dart';
 import 'package:talamiz_arina/core/widgets/action_button_view.dart';
 import 'package:talamiz_arina/core/widgets/screen_wrapper.dart';
 import 'package:talamiz_arina/features/course_package/presentation/manager/course_package_cubit.dart';
@@ -26,7 +28,11 @@ class CoursePackagePage extends StatelessWidget {
           child: ScreenWrapper(
             resizeToAvoidBottomInset: false,
             backGroundColor: Colors.white,
-            bottomNavigationBar: ActionButtonView(onReserve: () {}),
+            bottomNavigationBar: ActionButtonView(
+              onReserve: () {
+                context.push(PagesKeys.assignReserveDateTimePage);
+              },
+            ),
             body: NestedScrollView(
               headerSliverBuilder: (context, innerBoxIsScrolled) => [
                 CoursePackageAppBar(

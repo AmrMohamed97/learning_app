@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:talamiz_arina/core/routes/pages_keys.dart';
 import 'package:talamiz_arina/core/widgets/screen_wrapper.dart';
 import 'package:talamiz_arina/features/teacher_profile/presentation/manager/teacher_cubit.dart';
 import 'package:talamiz_arina/features/teacher_profile/presentation/manager/teacher_state.dart';
@@ -24,7 +26,11 @@ class TeacherProfilePage extends StatelessWidget {
           length: 3,
           child: ScreenWrapper(
             backGroundColor: Colors.white,
-            bottomNavigationBar: const ActionButtonView(),
+            bottomNavigationBar:   ActionButtonView(
+              onReserve: () {
+                    context.push(PagesKeys.assignReserveDateTimePage);
+              },
+            ),
             body: NestedScrollView(
               headerSliverBuilder: (context, innerBoxIsScrolled) => [
                 TeacherAppBar(
