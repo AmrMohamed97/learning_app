@@ -43,10 +43,7 @@ class _AssignReserveDateTimeState extends State<AssignReserveDateTime> {
         ),
         leading: IconButton(
           onPressed: () => Navigator.pop(context),
-          icon: const Icon(
-            Icons.arrow_back,
-            color: MyColors.greyNormal,
-          ),
+          icon: const Icon(Icons.arrow_back, color: MyColors.greyNormal),
         ),
       ),
       body: Column(
@@ -94,9 +91,17 @@ class _AssignReserveDateTimeState extends State<AssignReserveDateTime> {
             children: [
               Row(
                 children: [
-                  Icon(Icons.arrow_back_ios, size: 16.w, color: MyColors.greyNormal),
+                  Icon(
+                    Icons.arrow_back_ios,
+                    size: 16.w,
+                    color: MyColors.greyNormal,
+                  ),
                   SizedBox(width: 16.w),
-                  Icon(Icons.arrow_forward_ios, size: 16.w, color: MyColors.greyNormal),
+                  Icon(
+                    Icons.arrow_forward_ios,
+                    size: 16.w,
+                    color: MyColors.greyNormal,
+                  ),
                 ],
               ),
               Text(
@@ -109,13 +114,12 @@ class _AssignReserveDateTimeState extends State<AssignReserveDateTime> {
           ),
           SizedBox(height: 16.h),
           SizedBox(
-            height: 80.h,
+            height: 90.h,
             child: DatePicker(
-              DateTime(2025, 1, 1),
+              DateTime(2025),
               controller: _controller,
               initialSelectedDate: _selectedValue,
               selectionColor: MyColors.purpleNormal,
-              selectedTextColor: Colors.white,
               deactivatedColor: MyColors.greyLight,
               dateTextStyle: AppTextStyle.font16Medium.copyWith(
                 color: MyColors.greyNormal,
@@ -124,8 +128,8 @@ class _AssignReserveDateTimeState extends State<AssignReserveDateTime> {
                 color: MyColors.greyNormal,
               ),
               monthTextStyle: const TextStyle(fontSize: 0), // Hide month
-              width: 50.w,
-              height: 80.h,
+              width: 70.w,
+              height: 90.h,
               locale: 'ar',
               onDateChange: (date) {
                 setState(() {
@@ -216,19 +220,19 @@ class _AssignReserveDateTimeState extends State<AssignReserveDateTime> {
           child: Container(
             decoration: BoxDecoration(
               border: Border.all(
-                color: isSelected ? MyColors.purpleNormal : MyColors.purpleLight,
+                color: isSelected
+                    ? MyColors.purpleNormal
+                    : MyColors.purpleLight,
               ),
               borderRadius: BorderRadius.circular(8.r),
-              color: isSelected ? MyColors.purpleLight.withOpacity(0.3) : Colors.white,
+              color: isSelected
+                  ? MyColors.purpleLight.withOpacity(0.3)
+                  : Colors.white,
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(
-                  item['icon'],
-                  color: MyColors.greyNormal,
-                  size: 20.w,
-                ),
+                Icon(item['icon'], color: MyColors.greyNormal, size: 20.w),
                 SizedBox(height: 8.h),
                 Text(
                   item['time'],
