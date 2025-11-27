@@ -42,10 +42,7 @@ class _AssignReservedSubjectPageState extends State<AssignReservedSubjectPage> {
         ),
         leading: IconButton(
           onPressed: () => Navigator.pop(context),
-          icon: const Icon(
-            Icons.arrow_back,
-            color: MyColors.greyNormal,
-          ),
+          icon: const Icon(Icons.arrow_back, color: MyColors.greyNormal),
         ),
       ),
       body: Column(
@@ -66,6 +63,7 @@ class _AssignReservedSubjectPageState extends State<AssignReservedSubjectPage> {
           Padding(
             padding: EdgeInsets.all(16.w),
             child: PrimaryButton(
+              isMax: true,
               onPressed: () {},
               text: 'مراجعة طلبك',
               height: 50.h,
