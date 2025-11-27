@@ -64,6 +64,7 @@ class _AssignReserveDateTimeState extends State<AssignReserveDateTime> {
           Padding(
             padding: EdgeInsets.all(16.w),
             child: PrimaryButton(
+              isMax: true,
               onPressed: () {},
               text: 'تأكيد',
               height: 50.h,
