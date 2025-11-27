@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:talamiz_arina/core/routes/pages_keys.dart';
 import 'package:talamiz_arina/core/themes/colors/colors.dart';
 import 'package:talamiz_arina/core/themes/styles/app_text_style.dart';
 import 'package:talamiz_arina/core/widgets/primary_button.dart';
@@ -35,9 +36,7 @@ class SuccessPayPage extends StatelessWidget {
             SizedBox(height: 40.h),
             Text(
               'تم حجز درسك بنجاح',
-              style: AppTextStyle.font20SemiBold.copyWith(
-                color: Colors.black,
-              ),
+              style: AppTextStyle.font20SemiBold.copyWith(color: Colors.black),
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 12.h),
@@ -53,7 +52,9 @@ class SuccessPayPage extends StatelessWidget {
               isMax: true,
               onPressed: () {
                 // Navigate to home or relevant page
-                 context.pop(); // Or context.go(PagesKeys.homePage);
+                context.go(
+                  PagesKeys.mainBottomNavView,
+                ); // Or context.go(PagesKeys.homePage);
               },
               text: 'العودة للصفحة الرئيسية',
               height: 50.h,
