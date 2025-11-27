@@ -35,4 +35,5 @@ abstract class PagesKeys {
   static const assignReserveDateTimePage = '/assignReserveDateTime';
   static const assignReservedSubjectPage = '/assignReservedSubjectPage';
   static const reviewReservationPage = '/reviewReservationPage';
+  static const successPayPage = '/successPayPage';
 }

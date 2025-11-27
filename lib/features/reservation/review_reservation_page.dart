@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
+import 'package:talamiz_arina/core/routes/pages_keys.dart';
 import 'package:talamiz_arina/core/themes/colors/colors.dart';
 import 'package:talamiz_arina/core/themes/styles/app_text_style.dart';
 import 'package:talamiz_arina/core/widgets/my_text_form_field.dart';
@@ -51,7 +52,9 @@ class _ReviewReservationPageState extends State<ReviewReservationPage> {
             SizedBox(height: 24.h),
             PrimaryButton(
               isMax: true,
-              onPressed: () {},
+              onPressed: () {
+                context.push(PagesKeys.successPayPage);
+              },
               text: 'ادفع الآن',
               height: 50.h,
               radius: 12.r,
@@ -96,7 +99,11 @@ class _ReviewReservationPageState extends State<ReviewReservationPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Icon(Icons.verified, color: MyColors.purpleNormal, size: 16.sp),
+                    Icon(
+                      Icons.verified,
+                      color: MyColors.purpleNormal,
+                      size: 16.sp,
+                    ),
                     SizedBox(width: 4.w),
                     Text(
                       'أ.محمد العتيبي',
@@ -189,11 +196,7 @@ class _ReviewReservationPageState extends State<ReviewReservationPage> {
               ),
             ],
           ),
-          Container(
-            width: 1.w,
-            height: 40.h,
-            color: MyColors.greyLight,
-          ),
+          Container(width: 1.w, height: 40.h, color: MyColors.greyLight),
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
@@ -245,13 +248,14 @@ class _ReviewReservationPageState extends State<ReviewReservationPage> {
                   radius: 8.r,
                   backgroundColor: Colors.white,
                   textColor: MyColors.purpleNormal,
-                  borderColor: MyColors.purpleNormal, // Assuming outline button style
+                  borderColor:
+                      MyColors.purpleNormal, // Assuming outline button style
                 ),
               ),
               SizedBox(width: 12.w),
               Expanded(
                 child: SizedBox(
-                   height: 45.h,
+                  height: 45.h,
                   child: MyTextFormField(
                     hintText: 'أدخل كود الخصم',
                     filled: true,
@@ -305,8 +309,7 @@ class _ReviewReservationPageState extends State<ReviewReservationPage> {
             index: 1,
             title: 'stc pay',
             icons: ['assets/icons/stc_pay.svg'],
-            isCard: false,
-             isStc: true,
+            isStc: true,
           ),
         ],
       ),
@@ -330,7 +333,9 @@ class _ReviewReservationPageState extends State<ReviewReservationPage> {
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
         decoration: BoxDecoration(
-          color: isSelected ? MyColors.purpleLight.withOpacity(0.2) : Colors.white,
+          color: isSelected
+              ? MyColors.purpleLight.withOpacity(0.2)
+              : Colors.white,
           borderRadius: BorderRadius.circular(8.r),
           border: Border.all(
             color: isSelected ? MyColors.purpleNormal : MyColors.greyLight,
@@ -339,25 +344,33 @@ class _ReviewReservationPageState extends State<ReviewReservationPage> {
         child: Row(
           children: [
             Icon(
-              isSelected ? Icons.radio_button_checked : Icons.radio_button_unchecked,
+              isSelected
+                  ? Icons.radio_button_checked
+                  : Icons.radio_button_unchecked,
               color: isSelected ? MyColors.purpleNormal : MyColors.greyLight,
             ),
             const Spacer(),
-             if (isCard) ...[
-               // Placeholder for card icons if SVGs are not available, or use Row of Images
-               // For now using simple containers or text as placeholders if assets missing
-               // Ideally use SvgPicture.asset if assets exist
-               _buildCardIcon(Colors.blue, 'mada'),
-               SizedBox(width: 4.w),
-               _buildCardIcon(Colors.blue[900]!, 'Visa'),
-               SizedBox(width: 4.w),
-               _buildCardIcon(Colors.red, 'Master'),
-               SizedBox(width: 8.w),
-             ],
-             if (isStc) ...[
-                Text('stc pay', style: TextStyle(color: Colors.purple, fontWeight: FontWeight.bold)),
-                SizedBox(width: 8.w),
-             ],
+            if (isCard) ...[
+              // Placeholder for card icons if SVGs are not available, or use Row of Images
+              // For now using simple containers or text as placeholders if assets missing
+              // Ideally use SvgPicture.asset if assets exist
+              _buildCardIcon(Colors.blue, 'mada'),
+              SizedBox(width: 4.w),
+              _buildCardIcon(Colors.blue[900]!, 'Visa'),
+              SizedBox(width: 4.w),
+              _buildCardIcon(Colors.red, 'Master'),
+              SizedBox(width: 8.w),
+            ],
+            if (isStc) ...[
+              const Text(
+                'stc pay',
+                style: TextStyle(
+                  color: Colors.purple,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(width: 8.w),
+            ],
 
             Text(
               title,
@@ -370,16 +383,23 @@ class _ReviewReservationPageState extends State<ReviewReservationPage> {
       ),
     );
   }
-  
+
   Widget _buildCardIcon(Color color, String text) {
-      return Container(
-          padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
-          decoration: BoxDecoration(
-              border: Border.all(color: Colors.grey.shade300),
-              borderRadius: BorderRadius.circular(4.r)
-          ),
-          child: Text(text, style: TextStyle(fontSize: 8.sp, fontWeight: FontWeight.bold, color: color)),
-      );
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.grey.shade300),
+        borderRadius: BorderRadius.circular(4.r),
+      ),
+      child: Text(
+        text,
+        style: TextStyle(
+          fontSize: 8.sp,
+          fontWeight: FontWeight.bold,
+          color: color,
+        ),
+      ),
+    );
   }
 
   Widget _buildInvoiceCard() {

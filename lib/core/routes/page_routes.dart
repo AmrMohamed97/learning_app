@@ -41,6 +41,7 @@ import 'package:talamiz_arina/features/registration/presentation/views/registrat
 import 'package:talamiz_arina/features/reservation/assign_reserve_date_time_page.dart';
 import 'package:talamiz_arina/features/reservation/assign_reserved_subject_page.dart';
 import 'package:talamiz_arina/features/reservation/review_reservation_page.dart';
+import 'package:talamiz_arina/features/reservation/success_pay_page.dart';
 import 'package:talamiz_arina/features/splash/page/splash_screen.dart';
 import 'package:talamiz_arina/features/teacher_profile/presentation/manager/teacher_cubit.dart';
 import 'package:talamiz_arina/features/teacher_profile/presentation/page/teacher_profile_page.dart';
@@ -252,6 +253,17 @@ class PageRoutes {
           context: context,
           state: state,
           child: const ReviewReservationPage(),
+        ),
+      ),
+      // ---------------- successPayPage
+      GoRoute(
+        parentNavigatorKey: _rootNavigatorKey,
+        name: PagesKeys.successPayPage,
+        path: "/${PagesKeys.successPayPage}",
+        pageBuilder: (context, state) => buildPageWithDefaultTransition<void>(
+          context: context,
+          state: state,
+          child: const SuccessPayPage(),
         ),
       ),
       // ---------------- notificationPage
