@@ -34,4 +34,5 @@ abstract class PagesKeys {
   static const filterTimetablePageKey = '/filterTimetablePageKey';
   static const assignReserveDateTimePage = '/assignReserveDateTime';
   static const assignReservedSubjectPage = '/assignReservedSubjectPage';
+  static const reviewReservationPage = '/reviewReservationPage';
 }

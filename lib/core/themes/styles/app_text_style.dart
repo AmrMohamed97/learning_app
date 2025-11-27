@@ -51,4 +51,14 @@ abstract class AppTextStyle {
     fontSize: 14.sp,
     fontWeight: FontWeightHelper.semiBold,
   );
+
+  static TextStyle font12Regular = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.regular,
+  );
+
+  static TextStyle font12Medium = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.medium,
+  );
 }

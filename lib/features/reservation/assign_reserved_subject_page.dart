@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:talamiz_arina/core/routes/pages_keys.dart';
 import 'package:talamiz_arina/core/themes/colors/colors.dart';
 import 'package:talamiz_arina/core/themes/styles/app_text_style.dart';
 import 'package:talamiz_arina/core/widgets/my_text_form_field.dart';
@@ -64,7 +66,9 @@ class _AssignReservedSubjectPageState extends State<AssignReservedSubjectPage> {
             padding: EdgeInsets.all(16.w),
             child: PrimaryButton(
               isMax: true,
-              onPressed: () {},
+              onPressed: () {
+                context.push(PagesKeys.reviewReservationPage);
+              },
               text: 'مراجعة طلبك',
               height: 50.h,
               radius: 12.r,
