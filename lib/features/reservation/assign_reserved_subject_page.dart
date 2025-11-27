@@ -156,6 +156,7 @@ class _AssignReservedSubjectPageState extends State<AssignReservedSubjectPage> {
         SizedBox(height: 10.h),
         MyTextFormField(
           hintText: 'قد يساعد معلمك في التحضير للدرس',
+          minLine: 6,
           maxLines: 6,
           filled: true,
           filledColor: Colors.white,
