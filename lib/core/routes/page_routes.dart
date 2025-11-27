@@ -38,7 +38,8 @@ import 'package:talamiz_arina/features/profile/presentation/manager/profile_cubi
 import 'package:talamiz_arina/features/profile/presentation/views/profile_page.dart';
 import 'package:talamiz_arina/features/registration/presentation/manager/registration_cubit.dart';
 import 'package:talamiz_arina/features/registration/presentation/views/registration_page.dart';
-import 'package:talamiz_arina/features/reservation/assign_reserve_date_time.dart';
+import 'package:talamiz_arina/features/reservation/assign_reserve_date_time_page.dart';
+import 'package:talamiz_arina/features/reservation/assign_reserved_subject_page.dart';
 import 'package:talamiz_arina/features/splash/page/splash_screen.dart';
 import 'package:talamiz_arina/features/teacher_profile/presentation/manager/teacher_cubit.dart';
 import 'package:talamiz_arina/features/teacher_profile/presentation/page/teacher_profile_page.dart';
@@ -228,6 +229,17 @@ class PageRoutes {
           context: context,
           state: state,
           child: const AssignReserveDateTime(),
+        ),
+      ),
+      // ---------------- assignReservedSubjectPage
+      GoRoute(
+        parentNavigatorKey: _rootNavigatorKey,
+        name: PagesKeys.assignReservedSubjectPage,
+        path: "/${PagesKeys.assignReservedSubjectPage}",
+        pageBuilder: (context, state) => buildPageWithDefaultTransition<void>(
+          context: context,
+          state: state,
+          child: const AssignReservedSubjectPage(),
         ),
       ),
       // ---------------- notificationPage

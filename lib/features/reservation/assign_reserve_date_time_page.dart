@@ -1,7 +1,9 @@
 import 'package:date_picker_timeline/date_picker_timeline.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
+import 'package:talamiz_arina/core/routes/pages_keys.dart';
 import 'package:talamiz_arina/core/themes/colors/colors.dart';
 import 'package:talamiz_arina/core/themes/styles/app_text_style.dart';
 import 'package:talamiz_arina/core/widgets/primary_button.dart';
@@ -65,7 +67,9 @@ class _AssignReserveDateTimeState extends State<AssignReserveDateTime> {
             padding: EdgeInsets.all(16.w),
             child: PrimaryButton(
               isMax: true,
-              onPressed: () {},
+              onPressed: () {
+                context.push(PagesKeys.assignReservedSubjectPage);
+              },
               text: 'تأكيد',
               height: 50.h,
               radius: 12.r,
