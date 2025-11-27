@@ -1,9 +1,11 @@
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:talamiz_arina/core/helper/assets_helper.dart';
 import 'package:talamiz_arina/core/helper/countries_codes.dart';
+import 'package:talamiz_arina/core/routes/pages_keys.dart';
 import 'package:talamiz_arina/core/themes/colors/colors.dart';
 import 'package:talamiz_arina/core/themes/styles/app_text_style.dart';
 import 'package:talamiz_arina/features/main_bottom_nav/manager/main_bottom_nav_cubit.dart';
@@ -19,10 +21,7 @@ class MainViewAppBar extends StatelessWidget implements PreferredSizeWidget {
         final cubit = context.read<MainBottomNavCubit>();
         return AppBar(
           centerTitle: false,
-          title: Image.asset(
-            height: 35,
-            Assets.assetsImagesPngTalamizSplash,
-          ),
+          title: Image.asset(height: 35, Assets.assetsImagesPngTalamizSplash),
           actions: [
             Container(
               padding: const EdgeInsets.all(8),
@@ -33,13 +32,20 @@ class MainViewAppBar extends StatelessWidget implements PreferredSizeWidget {
               child: SvgPicture.asset(Assets.assetsImagesSvgNotifications),
             ),
             const SizedBox(width: 8),
-            Container(
-              padding: const EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                color: MyColors.purpleLightActive,
-                borderRadius: BorderRadius.circular(8),
+            CupertinoButton(
+              onPressed: () {
+                context.push(PagesKeys.notificationPage);
+              },
+              padding: EdgeInsets.zero,
+              minimumSize: Size.zero,
+              child: Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: MyColors.purpleLightActive,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: SvgPicture.asset(Assets.assetsImagesSvgPerson),
               ),
-              child: SvgPicture.asset(Assets.assetsImagesSvgPerson),
             ),
             // filter view
           ],

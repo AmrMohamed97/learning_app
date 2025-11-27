@@ -28,6 +28,7 @@ import 'package:talamiz_arina/features/login/presentation/views/login_page.dart'
 import 'package:talamiz_arina/features/login/presentation/views/new_password_page.dart';
 import 'package:talamiz_arina/features/main_bottom_nav/manager/main_bottom_nav_cubit.dart';
 import 'package:talamiz_arina/features/main_bottom_nav/view/main_bottom_nav_view.dart';
+import 'package:talamiz_arina/features/notification/notification_page.dart';
 import 'package:talamiz_arina/features/onboarding/presentation/pages/onboarding.dart';
 import 'package:talamiz_arina/features/otp/presentation/manager/otp_cubit.dart';
 import 'package:talamiz_arina/features/otp/presentation/page/otp_page.dart';
@@ -215,6 +216,17 @@ class PageRoutes {
             create: (context) => getIt<TeacherCubit>(),
             child: const TeacherProfilePage(),
           ),
+        ),
+      ),
+      // ---------------- notificationPage
+      GoRoute(
+        parentNavigatorKey: _rootNavigatorKey,
+        name: PagesKeys.notificationPage,
+        path: "/${PagesKeys.notificationPage}",
+        pageBuilder: (context, state) => buildPageWithDefaultTransition<void>(
+          context: context,
+          state: state,
+          child: const NotificationPage(),
         ),
       ),
       // ---------------- Home
