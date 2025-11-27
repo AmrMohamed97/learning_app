@@ -28,7 +28,7 @@ import 'package:talamiz_arina/features/login/presentation/views/login_page.dart'
 import 'package:talamiz_arina/features/login/presentation/views/new_password_page.dart';
 import 'package:talamiz_arina/features/main_bottom_nav/manager/main_bottom_nav_cubit.dart';
 import 'package:talamiz_arina/features/main_bottom_nav/view/main_bottom_nav_view.dart';
-import 'package:talamiz_arina/features/notification/notification_page.dart';
+import 'package:talamiz_arina/features/notification/presentation/page/notification_page.dart';
 import 'package:talamiz_arina/features/onboarding/presentation/pages/onboarding.dart';
 import 'package:talamiz_arina/features/otp/presentation/manager/otp_cubit.dart';
 import 'package:talamiz_arina/features/otp/presentation/page/otp_page.dart';
@@ -86,8 +86,8 @@ class PageRoutes {
   static final GoRouter router = GoRouter(
     navigatorKey: _rootNavigatorKey,
     observers: [MyNavigatorObserver()],
-    // initialLocation: PagesKeys.mainBottomNavView,
-    initialLocation: PagesKeys.splashScreen,
+    initialLocation: PagesKeys.mainBottomNavView,
+    // initialLocation: PagesKeys.splashScreen,
     errorBuilder: (context, state) {
       PrintHelper(state.error.toString());
       return const ErorPage();
